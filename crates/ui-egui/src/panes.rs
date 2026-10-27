@@ -21,6 +21,13 @@ mod comments;
 mod host;
 mod inspector;
 mod nav;
+
+/// The document's headings as the Navigation pane lists them: each heading paragraph's path, its
+/// outline level (0 is Heading 1) and its text with any list number. For hosts that draw their own
+/// outline of the document (WordCell's sidebar).
+pub fn headings(doc: &wordcraft_doc::Document) -> Vec<(wordcraft_doc::Path, u8, String)> {
+    nav::nav_headings(doc)
+}
 mod side;
 mod state;
 
