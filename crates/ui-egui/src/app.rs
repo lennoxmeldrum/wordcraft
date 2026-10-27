@@ -381,6 +381,21 @@ impl WordApp {
         }
     }
 
+    /// Draw every open document in the one window this app is given, as the web app does, instead
+    /// of a native window per document. For hosts that own the window (WordCell). Call before the
+    /// first frame.
+    pub fn set_single_window(&mut self) {
+        self.windows.single();
+    }
+
+    /// Something else replaced egui's fonts, styles and options since this app last drew (a host
+    /// showing another app in the same window): install WordCraft's again on the next pass.
+    pub fn reinstall_context(&mut self) {
+        self.styled = false;
+        self.applied_theme = None;
+        self.applied_animations = None;
+    }
+
     /// Lay out the windows: on the desktop each open document's in its own native window
     /// ([`windows`]), on the web the one window.
     pub fn ui(&mut self, ui: &mut egui::Ui) {

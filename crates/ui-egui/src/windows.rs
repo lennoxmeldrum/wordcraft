@@ -121,8 +121,7 @@ impl Windows {
         self.native
     }
 
-    /// One window for every document, as in the web app.
-    #[cfg(test)]
+    /// One window for every document, as in the web app (and in hosts such as WordCell).
     pub(crate) fn single(&mut self) {
         self.native = false;
     }
