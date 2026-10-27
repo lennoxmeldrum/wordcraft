@@ -118,8 +118,9 @@ impl WordApp {
         self.run("file.open", json!({"path": path}))
     }
 
-    /// Show open document `id` in the window (View › Window › Switch Windows, quitting).
-    pub(crate) fn show_document(&mut self, id: u64) -> Result<(), String> {
+    /// Show open document `id` in the window (View › Window › Switch Windows, quitting, and hosts
+    /// such as WordCell switching tabs).
+    pub fn show_document(&mut self, id: u64) -> Result<(), String> {
         self.session.activate(id).map_err(|e| e.to_string())?;
         self.sync_document();
         Ok(())
