@@ -11,6 +11,7 @@ own commit and is meant to be offered upstream; when upstream has it, drop it he
 | W2 | `WordApp::show_document` is public | WordCell host: public show_document | not yet opened |
 | W4 | `panes::headings`: the Navigation pane's heading list, for hosts | WordCell host: panes::headings for hosts' own outlines | not yet opened |
 | W5 | `WordApp::reinstall_context`: install WordCraft's fonts, theme and options again | WordCell host: single-window mode and context reinstall | not yet opened |
+| W8 | `WordApp::host_link_schemes`: ⌘-click follows a host's own link scheme (WordCell's `wordcell://`), handed to the host as `OpenUrl` | WordCell host: follow host link schemes | not yet opened |
 
 The plan these come from is `docs/implementation-plan.md` §6 in the WordCell repository.
 
