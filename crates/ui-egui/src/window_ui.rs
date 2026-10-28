@@ -156,6 +156,7 @@ impl WordApp {
             // App-wide.
             session: _,
             services: _,
+            host_link_schemes: _,
             printing: _,
             print_feedback_seen: _,
             font_generation: _,

@@ -81,6 +81,7 @@ impl WordApp {
         } = window_ui::WindowUi::new(session.document_id());
         WordApp {
             session,
+            host_link_schemes: Vec::new(),
             ui: UiState {
                 tab,
                 backstage,

@@ -456,6 +456,9 @@ pub struct WordApp {
     pub session: Session,
     pub ui: UiState,
     pub services: Services,
+    /// Link prefixes ⌘-click follows besides web and email links (a host's own scheme, such as
+    /// WordCell's `wordcell://`); they reach the host as `OpenUrl` output.
+    pub host_link_schemes: Vec<String>,
     pub printing: printing::State,
     print_feedback_seen: Option<printing::Feedback>,
     pub canvas: canvas::CanvasState,

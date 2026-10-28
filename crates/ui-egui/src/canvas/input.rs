@@ -328,7 +328,7 @@ fn handle_primary_press(
             if app.run("edit.goto", json!({"bookmark": name})).is_ok() {
                 let _ = app.run("select.collapse", json!({}));
             }
-        } else if is_followable_link(&link) {
+        } else if is_followable_link(&link) || app.host_link_schemes.iter().any(|s| link.starts_with(s.as_str())) {
             app.canvas.open_url = Some(link);
         } else {
             app.status(tl!("Only web (http, https) and email (mailto) links can be followed"));
